@@ -1,0 +1,64 @@
+name: Bug report
+description: Something in Aura is broken or not working as expected
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Aura. Please do not include transcript text or other private content unless you are comfortable sharing it publicly.
+  - type: input
+    id: aura-version
+    attributes:
+      label: Aura version
+      description: From Aura → About Aura (e.g. 1.0.4 (4))
+      placeholder: "1.0.4 (4)"
+    validations:
+      required: true
+  - type: input
+    id: macos-version
+    attributes:
+      label: macOS version
+      placeholder: "macOS 15.5"
+    validations:
+      required: true
+  - type: dropdown
+    id: install-source
+    attributes:
+      label: How did you install Aura?
+      options:
+        - Mac App Store
+        - Developer ID DMG
+        - Local / development build
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What did you do before the problem happened?
+      placeholder: |
+        1. Open Settings → …
+        2. Click …
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots, logs, or context (optional)
