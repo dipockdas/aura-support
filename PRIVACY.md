@@ -10,23 +10,23 @@ Aura turns what was said into something useful. This policy explains what Aura p
 
 ## Summary
 
-- **Audio is not stored.** Aura transcribes live and does not save audio recordings.
+- **Audio is not stored.** Aura transcribes live and does not create or save audio recordings.
 - **Transcription runs on your Mac** by default.
-- **Transcript text stays on your Mac** until you save, copy, or run Transform.
+- **Transcript text stays on your Mac** until you run Transform and you are using a cloud AI provider.
 - **Transform is optional.** Text leaves your Mac only when you choose a provider that processes it outside the device.
-- **Aura does not sell your data** and does not use third-party analytics in the current release.
+- **Aura does not collect, share or sell your data** and does not use third-party analytics in the current release.
 
 ---
 
 ## What Aura processes
 
-Aura may process:
+Aura will process:
 
 - Microphone audio (live, during recording)
 - System audio (live, in lecture and meeting modes)
 - Transcript text you create or edit
 - Saved transcript files you choose to export
-- API credentials you configure for cloud Transform providers
+- API credentials you configure for cloud Transform providers to store them in your Keychain
 - App settings stored on your Mac
 
 ---
@@ -41,17 +41,26 @@ Aura may process:
 | Whisper transcription (when used) | Yes |
 | On My Mac Transform (Ministral model) | Yes — after the model is downloaded |
 | Ollama / LM Studio Transform | Yes — when those run locally |
-| Transcripts | Yes — until you save or copy them |
+| Transcripts | Yes — until you save or copy them to another location |
 | Cloud API keys | Stored in the macOS Keychain |
 
 ---
+
+## What Aura needs internet access for
+
+| Action | What is it? | Where |
+|--------|-------------|--------|
+| Download Whisper model | Public model files | `huggingface.co` (HTTPS) |
+| Download On My Mac Transform model | Public model files | Model host (HTTPS) |
+| Transform if you choose a cloud provider | Cloud AI transformation of transacript | Ollama host (HTTPS) |
+
+---
+
 
 ## What can leave your Mac (only when you choose)
 
 | Action | What leaves | Where |
 |--------|-------------|--------|
-| Download Whisper model | Public model files | `huggingface.co` (HTTPS) |
-| Download On My Mac Transform model | Public model files | Model host (HTTPS) |
 | Transform — Private Cloud | Transcript text | Your Ollama account (HTTPS) |
 | Transform — Your AI Provider | Transcript text | OpenAI, Anthropic, or Google (HTTPS), using your API key |
 
@@ -61,7 +70,7 @@ Nothing is sent for **transcription** itself. Network use for Transform happens 
 
 ## Permissions
 
-Aura may request:
+Aura will request:
 
 - **Microphone** — to capture your voice
 - **Speech Recognition** — for Apple Speech on supported macOS versions
